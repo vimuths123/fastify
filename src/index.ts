@@ -1,10 +1,4 @@
-import fastify from 'fastify';
-
-const app = fastify();
-
-app.get('/', async (request, reply) => {
-  return { hello: 'world' };
-});
+import app from './app';
 
 export const handler = (req: any, res: any) => {
   app.ready(err => {
