@@ -7,8 +7,8 @@ const app = Fastify();
 app.register(userRoutes);
 
 app.get('/', async (request, reply) => {
-    return { hello: 'world from app' };
-  });
-  
+  return { message: 'This is the Unisyn Node API' };
+});
+
 
 export default app;
