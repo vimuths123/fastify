@@ -24,10 +24,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const userController = __importStar(require("../controllers/userController"));
+const auth0Middleware_1 = require("../middleware/auth0Middleware");
 async function default_1(fastify) {
-    fastify.addHook('preHandler', async (request, reply) => {
-        console.log('This is a preHandler hook at the plugin level.');
-    });
-    fastify.get('/user/:id', userController.getUser);
+    fastify.addHook('preHandler', auth0Middleware_1.auth0Middleware);
+    fastify.post('/user/:id', userController.getUser);
 }
 exports.default = default_1;
