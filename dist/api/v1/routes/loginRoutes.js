@@ -26,5 +26,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const loginController = __importStar(require("../controllers/loginController"));
 async function default_1(fastify) {
     fastify.post('/sendotp', loginController.sendOtp);
+    fastify.post('/gettoken', loginController.getToken);
 }
 exports.default = default_1;
