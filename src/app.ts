@@ -1,11 +1,13 @@
 import Fastify from 'fastify';
 import userRoutes from './api/v1/routes/userRoutes';
 import { auth0Middleware } from './api/v1/middleware/auth0Middleware';
+import loginRoutes from './api/v1/routes/loginRoutes';
 
 const app = Fastify();
 
 // Register routes
 app.register(userRoutes);
+app.register(loginRoutes);
 
 // app.addHook('preHandler', auth0Middleware);
 
