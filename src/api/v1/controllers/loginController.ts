@@ -15,6 +15,7 @@ export const sendOtp = async (request: FastifyRequest<SendOtpRequest>, reply: Fa
   const clientSecret = process.env.AUTH0_CLIENT_SECRET; 
   const userEmail = request.body.email;
 
+  
   try {
     const response = await axios.post(`${auth0Domain}/passwordless/start`, {
       client_id: clientId,
